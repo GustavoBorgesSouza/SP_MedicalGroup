@@ -19,7 +19,7 @@ CREATE TABLE Endereco(
 GO
 
 
-SELECT * FROM Endereco; --Importei a tabela e dados de endereço do excel, por isso verifico aqui
+--SELECT * FROM Endereco; --Importei a tabela e dados de endereço do excel, por isso verifico aqui
 
 --Criando tabela de Clinica
 CREATE TABLE Clinica(
@@ -96,5 +96,15 @@ CREATE TABLE Consulta(
 	IdSituacao INT FOREIGN KEY REFERENCES Situacao(IdSituacao) DEFAULT(1),
 	DataConsulta SMALLDATETIME NOT NULL,
 	DescricaoConsulta VARCHAR(400) DEFAULT(' ')
+);
+GO
+
+CREATE TABLE ImagemUsuario(
+	IdImagemUsuario INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL UNIQUE,
+	Binario VARBINARY(MAX) NOT NULL,
+	MimeType VARCHAR(80) NOT NULL,
+	NomeArquivo VARCHAR(250) NOT NULL,
+	DataInclusao DATETIME DEFAULT GETDATE() NOt NULL
 );
 GO
