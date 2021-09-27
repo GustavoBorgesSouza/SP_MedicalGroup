@@ -1,6 +1,18 @@
 USE SPMedGroup_GBm;
 GO
 
+INSERT INTO Endereco(Rua, Numero, Bairro, Cidade, Estado, CEP)
+VALUES 
+('Av. Barão Limeira', 532, 'Santa Cecilia', 'São Paulo', 'SP', '01202001'),
+('R. Estado de Israel', 240, 'Santa Cecilia', 'São Paulo', 'SP', '04022000'),
+('Av. Paulista', 1578, 'Santa Cecilia', 'São Paulo', 'SP', '01310200'),
+('Av. Ibirapuera', 2927, 'Santa Cecilia', 'São Paulo', 'SP', '04029200'),
+('R. Vitória', 120, 'Santa Cecilia', 'Barueri', 'SP', '06402030'),
+('R. Ver. Geraldo de Camargo', 66, 'Santa Cecilia', 'Ribeirão Pires', 'SP', '09405380'),
+('Alameda dos Arapanés', 945, 'Santa Cecilia', 'São Paulo', 'SP', '04524001'),
+('R Sao Antonio', 232, 'Santa Cecilia', 'Barueri', 'SP', '06407140');
+GO
+
 --Inserindo valores na tabela de Clinica em seus respectivos campos que há requisição
 INSERT INTO Clinica(IdEndereco, NomeFantasia ,CNPJ, RazaoSocial,
 HorarioAbertura, HorarioFechamento)

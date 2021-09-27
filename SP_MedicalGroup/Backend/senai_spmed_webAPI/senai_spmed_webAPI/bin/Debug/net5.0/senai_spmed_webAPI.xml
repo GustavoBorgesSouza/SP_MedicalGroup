@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_spmed_webAPI</name>
+    </assembly>
+    <members>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.ListarTodas">
+            <summary>
+            Lista todas as consultas existentes
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.ListarMinhas">
+            <summary>
+            Lista as consultas a um usuário, sendo este um paciente ou médico
+            </summary>
+            <returns>Uma lista de consultas associadas</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.LoginController.Login(senai_spmed_webAPI.ViewModels.LoginViewModel)">
+            <summary>
+            Método de login
+            </summary>
+            <param name="login">objeto loginViewModel</param>
+            <returns>JWT</returns>
+        </member>
+        <member name="T:senai_spmed_webAPI.Interfaces.IConsultaRepository">
+            <summary>
+            Interface responsável pelo InscricaooRepository
+            </summary>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.ListarTodas">
+            <summary>
+            Listar todas as cosultas
+            </summary>
+            <returns>Lista com todas as consultas</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Buscar uma consulta pelo id
+            </summary>
+            <param name="idConsulta">id da consulta a ser procurada</param>
+            <returns>Consulta encontrada</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.Atualizar(System.Int32,senai_spmed_webAPI.Domains.Consultum)">
+            <summary>
+            Atualiza uma Consulta pelo id
+            </summary>
+            <param name="idConsulta">Id da consulta a ser atualizada</param>
+            <param name="consultaAtualizada">objeto com atributos a serem atuzalizados da consulta</param>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.Deletar(System.Int32)">
+            <summary>
+            Exclui uma consulta
+            </summary>
+            <param name="idConsulta">id da consulta a ser excluida</param>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.ListarMinhas(System.Int32)">
+            <summary>
+            Lista todos os eventos de um determinado usuário
+            </summary>
+            <param name="idUsuario">Id do usuário que participa dos eventos</param>
+            <returns>Uma lista de presenças com os dados dos eventos</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.AdicionarDecrição(System.Int32,System.String)">
+            <summary>
+            Adiciona a descricao de uma consulta
+            </summary>
+            <param name="idConsulta">id da consulta a ter uma nova descrição</param>
+            <param name="descricao">descrição a ser adicionada</param>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.Cancela(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="idConsulta"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário 
+            </summary>
+            <param name="email">E-mail do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>Um objeto do tipo Usuario que foi encontrado</returns>
+        </member>
+        <member name="T:senai_spmed_webAPI.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de login
+            </summary>
+        </member>
+    </members>
+</doc>
