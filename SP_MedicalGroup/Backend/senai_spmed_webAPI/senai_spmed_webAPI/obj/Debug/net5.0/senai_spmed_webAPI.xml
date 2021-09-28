@@ -4,6 +4,19 @@
         <name>senai_spmed_webAPI</name>
     </assembly>
     <members>
+        <member name="M:senai_spmed_webAPI.Controllers.ClinicasController.ListarTodas">
+            <summary>
+            Lista todas as clinicas
+            </summary>
+            <returns>uma lista de clinicas</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ClinicasController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma clinica pelo id
+            </summary>
+            <param name="idClinica">id da clinica a ser procurada</param>
+            <returns>Uma clinica</returns>
+        </member>
         <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.ListarTodas">
             <summary>
             Lista todas as consultas existentes
@@ -16,12 +29,89 @@
             </summary>
             <returns>Uma lista de consultas associadas</returns>
         </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma consulta pelo id
+            </summary>
+            <param name="id">Id da consulta a ser buscada</param>
+            <returns>Uma consulta</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Cadastrar(senai_spmed_webAPI.Domains.Consultum)">
+            <summary>
+            Cadastra uma nova consulta
+            </summary>
+            <param name="novaConsulta">Objeto com atributos a serem inseridos</param>
+            <returns>status code 201 created</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Cancela(System.Int32,senai_spmed_webAPI.Domains.Consultum)">
+            <summary>
+            Cancela ou muda a situaçao de uma consulta
+            </summary>
+            <param name="idConsulta">Id da consulta a ser buscada</param>
+            <param name="status">Objeto com atributos a serem inseridos</param>
+            <returns>Status code 204 no content</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.AdicionaDescricao(System.Int32,senai_spmed_webAPI.Domains.Consultum)">
+            <summary>
+            Adiciona descrição a uma consulta
+            </summary>
+            <param name="idConsulta">Id da consulta a ser buscada</param>
+            <param name="novaConsulta">Objeto com atributos a serem inseridos</param>
+            <returns>Status code 204 no content</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Atualizar(System.Int32,senai_spmed_webAPI.Domains.Consultum)">
+            <summary>
+            Atualiza uma consulta
+            </summary>
+            <param name="idConsulta">Id da consulta a ser buscada</param>
+            <param name="consultaAtualizada">Objeto com atributos a serem inseridos</param>
+            <returns>Status code 204 no content</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Deletar(System.Int32)">
+            <summary>
+            Exclui uma consulta
+            </summary>
+            <param name="idConsulta">Id da consulta a ser buscada</param>
+            <returns>Status code 204 no content</returns>
+        </member>
         <member name="M:senai_spmed_webAPI.Controllers.LoginController.Login(senai_spmed_webAPI.ViewModels.LoginViewModel)">
             <summary>
             Método de login
             </summary>
             <param name="login">objeto loginViewModel</param>
             <returns>JWT</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IClinicaRepository.ListarTodos">
+            <summary>
+            Lista todas as clinicas
+            </summary>
+            <returns>Uma lista de clinicas</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IClinicaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma clinica pelo id
+            </summary>
+            <param name="idConsulta">id da clinica a ser buscada</param>
+            <returns>Uma clinica</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IClinicaRepository.Cadastrar(senai_spmed_webAPI.Domains.Clinica)">
+            <summary>
+            Cadastra uma nova clinica
+            </summary>
+            <param name="novaClinica">Objeto clinica com atributos a serem cadastrados</param>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IClinicaRepository.Atualizar(System.Int32,senai_spmed_webAPI.Domains.Clinica)">
+            <summary>
+            Atualiza uma clinica existente
+            </summary>
+            <param name="idClinica">id da clinica a ser buscada</param>
+            <param name="clinicaAtualizada">Objeto clinica com atributos a serem atualizados</param>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IClinicaRepository.Deletar(System.Int32)">
+            <summary>
+            Exclui uma clinica
+            </summary>
+            <param name="idClinica">id da clinica a ser buscada</param>
         </member>
         <member name="T:senai_spmed_webAPI.Interfaces.IConsultaRepository">
             <summary>
@@ -40,6 +130,12 @@
             </summary>
             <param name="idConsulta">id da consulta a ser procurada</param>
             <returns>Consulta encontrada</returns>
+        </member>
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.Cadastrar(senai_spmed_webAPI.Domains.Consultum)">
+            <summary>
+            Cria uma nova consulta
+            </summary>
+            <param name="novaConsulta">Objeto consulta com os atributos a serem cadastrados</param>
         </member>
         <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.Atualizar(System.Int32,senai_spmed_webAPI.Domains.Consultum)">
             <summary>
@@ -61,12 +157,12 @@
             <param name="idUsuario">Id do usuário que participa dos eventos</param>
             <returns>Uma lista de presenças com os dados dos eventos</returns>
         </member>
-        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.AdicionarDecrição(System.Int32,System.String)">
+        <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.AdicionarDecrição(System.Int32,senai_spmed_webAPI.Domains.Consultum)">
             <summary>
-            Adiciona a descricao de uma consulta
+            Adiciona descrição a uma consulta existente
             </summary>
-            <param name="idConsulta">id da consulta a ter uma nova descrição</param>
-            <param name="descricao">descrição a ser adicionada</param>
+            <param name="idConsulta">id da consulta a ter a descrição atualizada</param>
+            <param name="ConsultaComDescricao">objeto com atributo descrição</param>
         </member>
         <member name="M:senai_spmed_webAPI.Interfaces.IConsultaRepository.Cancela(System.Int32,System.String)">
             <summary>

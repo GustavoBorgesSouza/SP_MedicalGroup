@@ -15,27 +15,83 @@ namespace senai_spmed_webAPI.Repositories
        
         public void AdicionarDecrição(int idConsulta, Consultum ConsultaComDescricao)
         {
-            throw new NotImplementedException();
+            Consultum ConsultaBuscada = BuscarPorId(idConsulta);
+
+            if (ConsultaComDescricao.DescricaoConsulta != null)
+            {
+                ConsultaBuscada.DescricaoConsulta = ConsultaComDescricao.DescricaoConsulta;
+            }
+
+            ctx.Consulta.Update(ConsultaBuscada);
+
+            ctx.SaveChanges();
         }
 
         public void Atualizar(int idConsulta, Consultum consultaAtualizada)
         {
-            throw new NotImplementedException();
+            Consultum ConsultaBuscada = BuscarPorId(idConsulta);
+
+            if (consultaAtualizada.IdPaciente != null && consultaAtualizada.IdMedico != null && consultaAtualizada.IdSituacao != null && consultaAtualizada.DataConsulta != null)
+            {
+                ConsultaBuscada.IdPaciente = consultaAtualizada.IdPaciente;
+                ConsultaBuscada.IdMedico = consultaAtualizada.IdMedico;
+                ConsultaBuscada.IdSituacao = consultaAtualizada.IdSituacao;
+                ConsultaBuscada.DataConsulta = consultaAtualizada.DataConsulta;
+            }
+
+            ctx.Consulta.Update(ConsultaBuscada);
+
+            ctx.SaveChanges();
         }
 
         public Consultum BuscarPorId(int idConsulta)
         {
-            throw new NotImplementedException();
+            return ctx.Consulta.FirstOrDefault(c => c.IdConsulta == idConsulta);
+        }
+
+        public void Cadastrar(Consultum novaConsulta)
+        {
+            ctx.Consulta.Add(novaConsulta);
+
+            ctx.SaveChanges();
         }
 
         public void Cancela(int idConsulta, string status)
         {
-            throw new NotImplementedException();
+            Consultum consultaMudar = BuscarPorId(idConsulta);
+
+            switch (status)
+            {
+                case "1":
+                    consultaMudar.IdSituacao = 1;
+                    break;
+
+                case "2":
+                    consultaMudar.IdSituacao = 2;
+                    break;
+
+                case "3":
+                    consultaMudar.IdSituacao = 3;
+                    break;
+
+                default:
+                    consultaMudar.IdSituacao = consultaMudar.IdSituacao;
+                    break;
+            }
+
+            ctx.Consulta.Update(consultaMudar);
+
+            ctx.SaveChanges();
+
         }
 
         public void Deletar(int idConsulta)
         {
-            throw new NotImplementedException();
+            Consultum consultaBuscada = BuscarPorId(idConsulta);
+
+            ctx.Consulta.Remove(consultaBuscada);
+
+            ctx.SaveChanges();
         }
 
         public List<Consultum> ListarMinhas(int idUsuario)

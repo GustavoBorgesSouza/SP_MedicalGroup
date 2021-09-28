@@ -25,6 +25,12 @@ namespace senai_spmed_webAPI.Interfaces
         Consultum BuscarPorId(int idConsulta);
 
         /// <summary>
+        /// Cria uma nova consulta
+        /// </summary>
+        /// <param name="novaConsulta">Objeto consulta com os atributos a serem cadastrados</param>
+        void Cadastrar(Consultum novaConsulta);
+
+        /// <summary>
         /// Atualiza uma Consulta pelo id
         /// </summary>
         /// <param name="idConsulta">Id da consulta a ser atualizada</param>
@@ -46,10 +52,10 @@ namespace senai_spmed_webAPI.Interfaces
 
         
         /// <summary>
-        /// Adiciona a descricao de uma consulta
+        /// Adiciona descrição a uma consulta existente
         /// </summary>
-        /// <param name="idConsulta">id da consulta a ter uma nova descrição</param>
-        /// <param name="descricao">descrição a ser adicionada</param>
+        /// <param name="idConsulta">id da consulta a ter a descrição atualizada</param>
+        /// <param name="ConsultaComDescricao">objeto com atributo descrição</param>
         void AdicionarDecrição(int idConsulta, Consultum ConsultaComDescricao);
 
         /// <summary>
