@@ -14,26 +14,26 @@ namespace senai_spmed_webAPI.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ClinicasController : ControllerBase
+    public class MedicosController : ControllerBase
     {
-        private IClinicaRepository _clinicaRepository { get; set; }
+        private IMedicoRepository _medicoRepository { get; set; }
 
-        public ClinicasController()
+        public MedicosController()
         {
-            _clinicaRepository = new ClinicaRepository();
+            _medicoRepository = new MedicoRepository();
         }
 
         /// <summary>
-        /// Lista todas as clinicas
+        /// Lista todos os medicos
         /// </summary>
-        /// <returns>uma lista de clinicas</returns>
-        [Authorize(Roles ="1")]
+        /// <returns>uma lista de medicos</returns>
+        [Authorize(Roles = "1")]
         [HttpGet]
-        public IActionResult ListarTodas()
+        public IActionResult ListarTodos()
         {
             try
             {
-                return Ok(_clinicaRepository.ListarTodos());
+                return Ok(_medicoRepository.ListarTodos());
             }
             catch (Exception erro)
             {
@@ -42,45 +42,45 @@ namespace senai_spmed_webAPI.Controllers
         }
 
         /// <summary>
-        /// Busca uma clinica pelo id
+        /// Busca um medico pelo id
         /// </summary>
-        /// <param name="idClinica">id da clinica a ser procurada</param>
-        /// <returns>Uma clinica</returns>
+        /// <param name="idMedico">id do medico a ser procurado</param>
+        /// <returns>Um medico</returns>
         [Authorize(Roles = "1")]
-        [HttpGet("{idClinica}")]
-        public IActionResult BuscarPorId(int idClinica)
+        [HttpGet("{idMedico}")]
+        public IActionResult BuscarPorId(int idMedico)
         {
             try
             {
-                Clinica clinicaBuscada = _clinicaRepository.BuscarPorId(idClinica);
+                Medico medicoBuscado = _medicoRepository.BuscarPorId(idMedico);
 
-                if (clinicaBuscada != null)
+                if (medicoBuscado != null)
                 {
-                    return Ok(clinicaBuscada);
+                    return Ok(medicoBuscado);
                 }
 
-                return BadRequest("A clinica requisitada não existe");
+                return BadRequest("O medico requisitado não existe");
 
             }
             catch (Exception erro)
             {
-               return BadRequest(erro);
+                return BadRequest(erro);
             }
 
         }
 
         /// <summary>
-        /// Cadastra uma nova clinica
+        /// Cadastra um novo medico
         /// </summary>
-        /// <param name="novaClinica">Objeto clinica com os atributos a serem cadastrados</param>
+        /// <param name="novoMedico">Objeto medico com os atributos a serem cadastrados</param>
         /// <returns>Status code 201 created</returns>
         [Authorize(Roles = "1")]
         [HttpPost]
-        public IActionResult Cadastrar(Clinica novaClinica)
+        public IActionResult Cadastrar(Medico novoMedico)
         {
             try
             {
-                _clinicaRepository.Cadastrar(novaClinica);
+                _medicoRepository.Cadastrar(novoMedico);
 
                 return StatusCode(201);
 
@@ -92,18 +92,18 @@ namespace senai_spmed_webAPI.Controllers
         }
 
         /// <summary>
-        /// Atualiza uma clinica
+        /// Atualiza um medico
         /// </summary>
-        /// <param name="idClinica">Id da clinica a ser buscada</param>
-        /// <param name="clinicaAtualizada">Objeto com atributos a serem inseridos</param>
+        /// <param name="idMedico">Id do medico a ser buscado</param>
+        /// <param name="medicoAtualizado">Objeto com atributos a serem inseridos</param>
         /// <returns>Status code 204 no content</returns>
         [Authorize(Roles = "1")]
-        [HttpPut("{idClinica}")]
-        public IActionResult Atualizar(int idClinica, Clinica clinicaAtualizada)
+        [HttpPut("{idMedico}")]
+        public IActionResult Atualizar(int idMedico, Medico medicoAtualizado)
         {
             try
             {
-                _clinicaRepository.Atualizar(idClinica, clinicaAtualizada);
+                _medicoRepository.Atualizar(idMedico, medicoAtualizado);
 
                 return StatusCode(204);
             }
@@ -115,17 +115,17 @@ namespace senai_spmed_webAPI.Controllers
         }
 
         /// <summary>
-        /// Exclui uma clinica
+        /// Exclui um medico
         /// </summary>
-        /// <param name="idClinica">Id da clinica a ser buscada</param>
+        /// <param name="idMedico">Id do medico a ser buscado</param>
         /// <returns>Status code 204 no content</returns>
         [Authorize(Roles = "1")]
-        [HttpDelete("{idClinica}")]
-        public IActionResult Deletar(int idClinica)
+        [HttpDelete("{idMedico}")]
+        public IActionResult Deletar(int idMedico)
         {
             try
             {
-                _clinicaRepository.Deletar(idClinica);
+                _medicoRepository.Deletar(idMedico);
 
                 return StatusCode(204);
             }
@@ -135,5 +135,4 @@ namespace senai_spmed_webAPI.Controllers
             }
         }
     }
-    
 }

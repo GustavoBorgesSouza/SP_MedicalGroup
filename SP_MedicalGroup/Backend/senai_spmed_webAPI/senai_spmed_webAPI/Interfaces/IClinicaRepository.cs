@@ -17,7 +17,7 @@ namespace senai_spmed_webAPI.Interfaces
         /// <summary>
         /// Busca uma clinica pelo id
         /// </summary>
-        /// <param name="idConsulta">id da clinica a ser buscada</param>
+        /// <param name="idClinica">id da clinica a ser buscada</param>
         /// <returns>Uma clinica</returns>
         Clinica BuscarPorId(int idClinica);
 
