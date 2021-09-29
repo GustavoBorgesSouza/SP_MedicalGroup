@@ -134,3 +134,5 @@ C:\Users\fic\Desktop\SP_MedicalGroup\SP_MedicalGroup\Backend\senai_spmed_webAPI\
 C:\Users\fic\Desktop\SP_MedicalGroup\SP_MedicalGroup\Backend\senai_spmed_webAPI\senai_spmed_webAPI\obj\Debug\net5.0\senai_spmed_webAPI.genruntimeconfig.cache
 C:\Users\fic\Desktop\SP_MedicalGroup\SP_MedicalGroup\Backend\senai_spmed_webAPI\senai_spmed_webAPI\bin\Debug\net5.0\senai_spmed_webAPI.xml
 C:\Users\fic\Desktop\SP_MedicalGroup\SP_MedicalGroup\Backend\senai_spmed_webAPI\senai_spmed_webAPI\obj\Debug\net5.0\senai_spmed_webAPI.xml
+C:\Users\gusta\OneDrive\Área de Trabalho\SP_MedicalGroup\SP_MedicalGroup\Backend\senai_spmed_webAPI\senai_spmed_webAPI\bin\Debug\net5.0\senai_spmed_webAPI.xml
+C:\Users\gusta\OneDrive\Área de Trabalho\SP_MedicalGroup\SP_MedicalGroup\Backend\senai_spmed_webAPI\senai_spmed_webAPI\obj\Debug\net5.0\senai_spmed_webAPI.xml

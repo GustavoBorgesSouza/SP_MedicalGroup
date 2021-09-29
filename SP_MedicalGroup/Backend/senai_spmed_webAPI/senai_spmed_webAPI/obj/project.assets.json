@@ -7698,19 +7698,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fic\\.nuget\\packages\\": {}
+    "C:\\Users\\gusta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fic\\Desktop\\SP_MedicalGroup\\SP_MedicalGroup\\Backend\\senai_spmed_webAPI\\senai_spmed_webAPI\\senai_spmed_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\gusta\\OneDrive\\Área de Trabalho\\SP_MedicalGroup\\SP_MedicalGroup\\Backend\\senai_spmed_webAPI\\senai_spmed_webAPI\\senai_spmed_webAPI.csproj",
       "projectName": "senai_spmed_webAPI",
-      "projectPath": "C:\\Users\\fic\\Desktop\\SP_MedicalGroup\\SP_MedicalGroup\\Backend\\senai_spmed_webAPI\\senai_spmed_webAPI\\senai_spmed_webAPI.csproj",
-      "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fic\\Desktop\\SP_MedicalGroup\\SP_MedicalGroup\\Backend\\senai_spmed_webAPI\\senai_spmed_webAPI\\obj\\",
+      "projectPath": "C:\\Users\\gusta\\OneDrive\\Área de Trabalho\\SP_MedicalGroup\\SP_MedicalGroup\\Backend\\senai_spmed_webAPI\\senai_spmed_webAPI\\senai_spmed_webAPI.csproj",
+      "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gusta\\OneDrive\\Área de Trabalho\\SP_MedicalGroup\\SP_MedicalGroup\\Backend\\senai_spmed_webAPI\\senai_spmed_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7789,7 +7789,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
