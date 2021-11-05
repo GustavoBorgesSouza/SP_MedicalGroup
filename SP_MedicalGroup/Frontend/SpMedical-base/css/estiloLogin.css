@@ -43,6 +43,30 @@ header{
     height: 60px;
 }
 
-main {
-    margin-top: 80px;
+main{
+    background-color: #8BD9D9;
+}
+
+.principal{
+    margin: 120px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_login {
+    width: 407px;
+    height: 480px;
+    border-style: groove;
+    border-color: #B3B3B3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.box_login h1{
+    font-family: 'Nunito';
+    font-size: 26px;
+    color: #B3B3B3;
 }
