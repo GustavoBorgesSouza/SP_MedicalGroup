@@ -276,3 +276,11 @@ footer{
     text-transform: capitalize;
     margin-top: 20px; 
 }
+
+.contato li{
+    list-style-type: none;
+}
+
+.contato i{
+    margin-right: 20px;
+}

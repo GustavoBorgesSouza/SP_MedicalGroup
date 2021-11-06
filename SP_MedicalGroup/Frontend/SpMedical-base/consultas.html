@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas SpMedicalGroup</title>
+    <link rel="stylesheet" href="css/consultas.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="container container_header">
+            <a href="#"><img class="logo_completo" src="./assets/Logo_completo.png" alt="Logo"></a>
+            <nav class="menu_header">
+                <div class="meio_header">
+                    <a href="#">Início</a>
+                    <a href="#">Sobre</a>
+                    <a href="#">Especialidades</a>
+                </div>
+                <div class="login_header">
+                    <a href="#">Login</a>
+                    <i class="far fa-user user"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container container_banner">
+            <h1>Lista de consultas</h1>
+        </div>
+        <button>cadastrar</button>
+        <section class=" container listagem">
+            <h2>Listagem</h2>
+
+            <div class=" consulta">
+                <div class="informacoes_principais">
+                    <div class="info_users">
+                        <div class="info">
+                            <p class="chave">Paciente:</p>
+                            <p class="valor">Fernando</p>
+                        </div>
+                        <div class="info">
+                            <p class="chave">Medico:</p>
+                            <p class="valor">Roberto Possarle</p>
+                        </div>
+                        <div class="info">
+                            <p class="chave">Especialidade:</p>
+                            <p class="valor">Psquiatria</p>
+                        </div>
+                    </div>
+                    <div class="info_consulta">
+                        <div class="situacao">
+                            <p class=" info chave ">Realizada</p>
+                        </div>
+                        <div class="info">
+                            <p class="chave">Data da Consulta:</p>
+                            <p class="valor">02/07/2020 11:00</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="informacoes_secundarias">
+                    <p class="chave">Descricao da consulta</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="descricao">
+                    <p class="valor"></p>
+                </div>
+            </div>
+
+            <div class=" consulta">
+                <div class="informacoes_principais">
+                    <div class="info_users">
+                        <div class="info">
+                            <p class="chave">Paciente:</p>
+                            <p class="valor">Fernando</p>
+                        </div>
+                        <div class="info">
+                            <p class="chave">Medico:</p>
+                            <p class="valor">Roberto Possarle</p>
+                        </div>
+                        <div class="info">
+                            <p class="chave">Especialidade:</p>
+                            <p class="valor">Psquiatria</p>
+                        </div>
+                    </div>
+                    <div class="info_consulta">
+                        <div class="situacao">
+                            <p class=" info chave ">Realizada</p>
+                        </div>
+                        <div class="info">
+                            <p class="chave">Data da Consulta:</p>
+                            <p class="valor">02/07/2020 11:00</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="informacoes_secundarias">
+                    <p class="chave">Descricao da consulta</p>
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+                <div class="descricao">
+                    <p class="valor">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container cadastro">
+            <h2>Cadastro</h2>
+            <div class="container_cadastro">
+                <form action="" class="container_cadastro">
+                    <div class="inputs">
+                        <div class="input_users">
+                            <div class="campo_">
+                                <label for="email">Email:</label><br>
+                                <select name="email" id="email" name="email" value="">
+                                </select><br>
+                            </div>
+                            <div class="campo_">
+                                <label for="medico">Medico:</label><br>
+                                <select name="medico" id="medico" name="medico" value="">
+                                </select><br>
+                            </div>
+                            <div class="campo_">
+                                <label for="situacao">Situacao:</label><br>
+                                <select name="situacao" id="situacao" name="email" value="">
+                                </select><br>
+                            </div>
+                        </div>
+                        <div class="input_consulta">
+                            <div class="campo">
+                                <label for="data">Data da consulta</label><br>
+                                <input name="data" id="data" type="datetime-local">
+                            </div>
+                            <div class="campo">
+                                <label for="descricao">Descricao</label><br>
+                                <input name="descricao" id="descricao" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <button>cadastrar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container container_footer">
+            <div class="bloco_footer">
+                <p>links uteis:</p>
+                <ul>
+                    <li>regras de utilização</li>
+                    <li>suporte</li>
+                    <li>central de ajuda</li>
+                </ul>
+            </div>
+            <div class="main_footer">
+                <img src="./assets/LogoSimples.png" alt="">
+                <span>@São Paulo Medical Group</span>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="bloco_footer contato">
+                <p>Contato:</p>
+                <ul>
+                    <li><i class="fab fa-whatsapp"></i>Whatsapp</li>
+                    <li><i class="fab fa-facebook-f"></i> Facebook</li>
+                    <li><i class="fab fa-instagram"></i>Instagram</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
