@@ -97,7 +97,7 @@ main{
     text-transform: capitalize;
 }
 
-button{
+.botao{
     width: 274px;
     height: 54.19px;
     background-color: #89D9B2;
@@ -108,6 +108,10 @@ button{
     color: white;
     font-family: 'Nunito', sans-serif;
     text-transform: capitalize;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 h2{
@@ -170,7 +174,13 @@ h2{
     text-align: right;
 }
 
-.situacao p{
+.situacao i{
+    font-size: 20px;
+    color: #ada8a8;
+    margin: 0 20px;
+}
+
+.status{
     font-size: 26px;
     font-weight: bold;
     font-family: 'Nunito', sans-serif;
@@ -198,6 +208,15 @@ hr{
 
 .descricao{
     margin: 14px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descricao i{
+    font-size: 20px;
+    color: #ada8a8;
+    margin: 20px;
 }
 
 .cadastro{
@@ -224,7 +243,7 @@ hr{
 .inputs label{
     font-family: 'Nunito', sans-serif;
     font-size: 24px;
-    color: #B3B3B3;
+    color: #ffffff;
     font-weight: lighter;
 }
 
@@ -240,6 +259,17 @@ hr{
 }
 
 .inputs input{
+    width: 280px;
+    height: 35px;
+    background-color: #E0E0E0;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
+
+.inputs textarea{
     width: 280px;
     height: 35px;
     background-color: #E0E0E0;
@@ -334,4 +364,11 @@ footer{
 
 .contato i{
     margin-right: 20px;
+}
+
+.vazio{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    width: auto;
+    overflow: hidden;
 }

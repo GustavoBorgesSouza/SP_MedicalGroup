@@ -32,7 +32,7 @@
         <div class="container container_banner">
             <h1>Lista de consultas</h1>
         </div>
-        <button>cadastrar</button>
+        <button class="botao">cadastrar</button>
         <section class=" container listagem">
             <h2>Listagem</h2>
 
@@ -54,7 +54,15 @@
                     </div>
                     <div class="info_consulta">
                         <div class="situacao">
-                            <p class=" info chave ">Realizada</p>
+                            <div class=" info chave ">
+                                <select class="status vazio" name="status" id="status">
+                                    <option value="0">Agendada</option>
+                                    <option value="1">Realizada</option>
+                                    <option value="2">Cancelada</option>
+                                </select>
+                                <button type="button" class="vazio"><i class="far fa-edit"></i></button>
+                            </div>
+
                         </div>
                         <div class="info">
                             <p class="chave">Data da Consulta:</p>
@@ -65,10 +73,11 @@
                 <hr>
                 <div class="informacoes_secundarias">
                     <p class="chave">Descricao da consulta</p>
-                    <i class="fas fa-chevron-down"></i>
+                    <button type="button" class="vazio"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="descricao">
-                    <p class="valor"></p>
+                    <textarea name="texto_desc" id="texto_desc" class="valor vazio" style="resize: none; display: none"
+                        cols="86" rows="10" readonly=""></textarea>
                 </div>
             </div>
 
@@ -90,7 +99,15 @@
                     </div>
                     <div class="info_consulta">
                         <div class="situacao">
-                            <p class=" info chave ">Realizada</p>
+                            <div class=" info chave ">
+                                <select class="status vazio" name="status" id="status">
+                                    <option value="0">Agendada</option>
+                                    <option value="1">Realizada</option>
+                                    <option value="2">Cancelada</option>
+                                </select>
+                                <button type="button" class="vazio"><i class="far fa-edit"></i></button>
+                            </div>
+
                         </div>
                         <div class="info">
                             <p class="chave">Data da Consulta:</p>
@@ -101,18 +118,21 @@
                 <hr>
                 <div class="informacoes_secundarias">
                     <p class="chave">Descricao da consulta</p>
-                    <i class="fas fa-chevron-up"></i>
+                    <button class="vazio"><i class="fas fa-chevron-up"></i></button>
                 </div>
                 <div class="descricao">
-                    <p class="valor">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    <textarea name="texto_desc" id="texto_desc" class="valor vazio" style="resize: none" cols="86"
+                        rows="10" readonly="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                         Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
                         took a galley of type and scrambled it to make a type specimen book. It has survived not only
                         five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                         passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.
+                        versions of Lorem Ipsum.</textarea>
 
-                    </p>
+                    <button class="vazio"><i class="far fa-edit"></i></button>
+
+                    <button class="botao">Atualizar</button>
                 </div>
             </div>
 
@@ -147,11 +167,12 @@
                             </div>
                             <div class="campo">
                                 <label for="descricao">Descricao</label><br>
-                                <input name="descricao" id="descricao" type="text">
+                                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                                <!-- <input name="descricao" id="descricao" type="text"> -->
                             </div>
                         </div>
                     </div>
-                    <button>cadastrar</button>
+                    <button class="botao">cadastrar</button>
                 </form>
             </div>
         </section>
