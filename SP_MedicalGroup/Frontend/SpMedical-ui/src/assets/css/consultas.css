@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+
+.container{
+    /* background-color: blue; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.container_header{
+    /* background-color: brown; */
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    background-color: white;
+    color: white;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-style: solid;
+    border-bottom-color: #B3B3B3;
+}
+
+.logo_completo{
+    width:180px;
+    height: 60px;
+}
+
+.menu_header{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+
+.meio_header{
+    width: 412px;
+}
+
+.user{
+    font-size: 30px;
+    color: #B3B3B3;
+}
+
+nav a{
+    font-family: 'Lato', sans-serif;
+    color: #B3B3B3;
+    font-size: 24px;
+    margin:0 15px;
+    text-decoration: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container_banner{
+    padding-top: 20px;
+    margin-top: 80px;
+    width: 100%;
+    height: 396px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../assets/Img_banner_consultas.png);
+    margin-bottom: 124px;
+}
+
+.container_banner h1{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 72px;
+    color:white;
+    text-transform: capitalize;
+}
+
+.botao{
+    width: 274px;
+    height: 54.19px;
+    background-color: #89D9B2;
+    border: 1px solid #89D9B2;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 28px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+h2{
+    margin: 10px 0;
+    font-size: 26px;
+    color: #B3B3B3;
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
+}
+
+.listagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.consulta{
+    margin: 25px;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(0deg, rgba(137, 217, 178, 0.5), rgba(137, 217, 178, 0.5)), #E5E5E5;
+    border-radius: 25px;
+}
+
+.informacoes_principais{
+    margin: 0 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info{
+    display: flex;
+    margin: 30px 0;
+}
+
+.chave{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-right: 10px;
+}
+
+.valor{
+    font-size: 26px;
+    font-weight: normal;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-right: 10px;
+}
+
+.situacao{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-bottom: 86px;
+    width: 440px;
+    text-align: right;
+}
+
+.situacao i{
+    font-size: 20px;
+    color: #ada8a8;
+    margin: 0 20px;
+}
+
+.status{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    text-align: right;
+}
+
+hr{
+    color: #B3B3B3;
+}
+.informacoes_secundarias{
+    margin: 14px 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.informacoes_secundarias i{
+    font-size: 26px;
+    font-weight: bold;
+    color: #B3B3B3;
+    margin-right: 10px;
+}
+
+.descricao{
+    margin: 14px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descricao i{
+    font-size: 20px;
+    color: #ada8a8;
+    margin: 20px;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_cadastro{
+    width: 100%;
+    background: linear-gradient(0deg, rgba(130, 192, 217, 0.75), rgba(130, 192, 217, 0.75)), #FFFFFF;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+}
+
+.inputs label{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+.inputs select{
+    width: 280px;
+    height: 35px;
+    background-color: #E0E0E0;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
+
+.inputs input{
+    width: 280px;
+    height: 35px;
+    background-color: #E0E0E0;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
+
+.inputs textarea{
+    width: 280px;
+    height: 35px;
+    background-color: #E0E0E0;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
+
+.campo_{
+    margin: 40px 0 60px;
+}
+
+.campo{
+    margin: 40px 60px;
+}
+
+#descricao{
+    height: 200px;
+}
+
+.container_footer{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+footer{
+    width: 100%;
+    border-top-style: solid;
+    border-top-color: #B3B3B3;
+}
+
+.bloco_footer{
+    margin: 45px 0;
+}
+
+.bloco_footer p{
+    font-family: 'Lato';
+    font-weight: bolder;
+    font-size: 26px;
+    color: #B3B3B3;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.bloco_footer li{
+    font-family: 'Lato';
+    font-size: 26px;
+    color: #B3B3B3;
+    text-transform: capitalize;
+}
+
+.main_footer{
+    width: 340px;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_footer img{
+    width: 112px;
+    height: 122px;
+    margin: 10px 0;
+}
+
+.main_footer span{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #B3B3B3;
+}
+
+.main_footer p{
+    font-family: 'Lato';
+    font-weight: bolder;
+    font-size: 26px;
+    color: #B3B3B3;
+    text-transform: capitalize;
+    margin-top: 20px; 
+}
+
+.contato li{
+    list-style-type: none;
+}
+
+.contato i{
+    margin-right: 20px;
+}
+
+.vazio{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    width: auto;
+    overflow: hidden;
+}
