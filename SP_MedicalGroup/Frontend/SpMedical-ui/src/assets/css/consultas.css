@@ -77,7 +77,7 @@ main{
 
 }
 
-.container_banner{
+.container_banner_consultas{
     padding-top: 20px;
     margin-top: 80px;
     width: 100%;
@@ -85,11 +85,12 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../assets/Img_banner_consultas.png);
+    background-image: url(../img/Img_banner_consultas.png);
+    background-size: cover;
     margin-bottom: 124px;
 }
 
-.container_banner h1{
+.container_banner_consultas h1{
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     font-size: 72px;

@@ -15,7 +15,7 @@ export default function Home() {
             <Cabecalho />
             <main>
 
-                <section className="container container_banner">
+                <section className="container_banner">
                     <div className="main_banner">
                         <h1 className="titulo_banner">Conheça a clinica que melhor atende suas necessides</h1>
                         <p className="subtitulo_banner">A clinica nova e moderna, que trás de tudo do melhor para seus pacientes e

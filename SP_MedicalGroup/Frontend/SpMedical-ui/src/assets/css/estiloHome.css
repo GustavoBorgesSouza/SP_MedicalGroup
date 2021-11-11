@@ -79,6 +79,7 @@ nav a{
     justify-content: space-around;
     background-image: url(../img/banner_principal.png);
     background-size: cover;
+    margin-bottom: 80px;
 }
 
 .main_banner{

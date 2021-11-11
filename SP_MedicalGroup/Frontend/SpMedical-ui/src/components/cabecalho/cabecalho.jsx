@@ -16,7 +16,7 @@ export default function Cabecalho() {
                         <a href="#especialidades">Especialidades</a>
                     </div>
                     <div className="login_header">
-                        <Link to="">Login</Link>
+                        <Link to="/login">Login</Link>
                         <User/>
                     </div>
                 </nav>

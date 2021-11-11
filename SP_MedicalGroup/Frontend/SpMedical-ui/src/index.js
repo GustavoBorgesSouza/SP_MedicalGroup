@@ -5,16 +5,34 @@ import {  Route, BrowserRouter as Router, Redirect, Switch } from 'react-router-
 import './index.css';
 
 import Home from './pages/home/home.jsx';
+import Login from './pages/login/login';
 import NotFound from './pages/notFound/notFound';
+import ConsultasAdm from './pages/consultas/consultasAdm';
 
 import reportWebVitals from './reportWebVitals';
 
+import { parseJWT, usuarioAutenticado } from './services/auth';
+
+const PermissaoAdm = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() && parseJWT().role === '1' ? (
+        // operador spread
+        <Component {...props} />
+      ) : (
+        <Redirect to="login" />
+      )
+    }
+  />
+);
 
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={Home} /> {/* Home */}
+        <Route path="/login" component={Login} />
+        <PermissaoAdm path="/consultasAdm" component={ConsultasAdm}/>
         <Route path="/notFound" component={NotFound} /> {/* NotFound*/}
         <Redirect to="/notFound" /> {/* Redireciona para notfound caso não encontre nenhuma rota*/}
       </Switch>

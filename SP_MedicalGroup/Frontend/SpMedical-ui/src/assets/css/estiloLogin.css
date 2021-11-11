@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.login_corpo{
     overflow: hidden;
+    background-color: #a3e0e077 ;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
@@ -15,7 +19,7 @@
     margin: 0 auto;
 }
 
-.container_header{
+.container_header_login{
     /* background-color: brown; */
     height: 100%;
     display: flex;
@@ -44,9 +48,7 @@ header{
     height: 60px;
 }
 
-body{
-    background-color: #a3e0e077 ;
-}
+
 
 .principal{
     margin: 120px 0;
