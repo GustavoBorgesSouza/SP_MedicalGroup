@@ -23,7 +23,7 @@ export default class Login extends Component{
 
         this.setState({ erroMensagem: '', isLoading: true });
 
-        axios.post("http://localhost:5000/api/Login",{
+        axios.post("http://localhost:5000/api/Login", {
             email: this.state.email,
             senha: this.state.senha
         })
@@ -63,7 +63,7 @@ export default class Login extends Component{
                         break;
                 }
             }
-        })
+        }).catch( erro => console.log(erro), this.setState({ erroMensagem: "credenciais inválidas"}))
 
     }
 
@@ -96,6 +96,7 @@ export default class Login extends Component{
                                     <input type="password" id="senha" name="senha" value={this.state.senha} onChange={this.AtualizaStateCampo} placeholder="Digite sua senha" /><br />
                                 </div>
                                 <button type="submit">Login</button>
+                                <p className="erroMensagem">{this.state.erroMensagem}</p>
                             </form>
                         </div>
                     </div>

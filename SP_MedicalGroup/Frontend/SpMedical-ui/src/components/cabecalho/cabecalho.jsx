@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../../assets/img/Logo_completo.png'
 import User from '../icones/user'
 import { Link } from 'react-router-dom';
+import Analise from '../Logado/logado';
 
 
 export default function Cabecalho() {
@@ -16,7 +17,7 @@ export default function Cabecalho() {
                         <a href="#especialidades">Especialidades</a>
                     </div>
                     <div className="login_header">
-                        <Link to="/login">Login</Link>
+                        <Analise />
                         <User/>
                     </div>
                 </nav>

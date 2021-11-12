@@ -118,3 +118,8 @@ header{
     align-items: center;
     justify-content: space-around;
 }
+
+.erroMensagem{
+    color: orangered;
+    text-transform: uppercase;
+}
