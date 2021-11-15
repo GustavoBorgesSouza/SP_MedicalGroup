@@ -17,8 +17,8 @@ export default function ConsultasAdm() {
     const [idPaciente, setIdPaciente] = useState(0);
     const [idMedico, setIdMedico] = useState(0);
     const [idSituacao, setIdSituacao] = useState(0);
-    const [ dataConsulta, setDataConsulta] = useState(new Date());
-    const [ descricaoConsulta, setDescricaoConsulta] = useState("");
+    const [dataConsulta, setDataConsulta] = useState(new Date());
+    const [descricaoConsulta, setDescricaoConsulta] = useState("");
 
     function buscarMedicos() {
         axios("http://localhost:5000/api/Medicos", {
@@ -66,6 +66,28 @@ export default function ConsultasAdm() {
     }
 
     useEffect(buscarConsultas, []);
+
+    function cadastrarConsultas(evento) {
+        evento.preventDefault();
+        axios.post("http://localhost:5000/api/Consultas", {
+            idPaciente: idPaciente,
+            idMedico: idMedico,
+            idSituacao: idSituacao,
+            dataConsulta: new Date(dataConsulta)
+        }, {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        }) 
+        .then(resposta =>{
+            if (resposta.status === 201) {
+                console.log("consulta cadastrada");
+                buscarConsultas();
+                
+                
+            }
+        }).catch(erro => console.log(erro))
+    }
 
 
 
@@ -193,7 +215,7 @@ export default function ConsultasAdm() {
                 <section id="cadastro" className="container cadastro">
                     <h2>Cadastro</h2>
                     <div className="container_cadastro">
-                        <form className="container_cadastro">
+                        <form onSubmit={cadastrarConsultas} className="container_cadastro">
                             <div className="inputs">
                                 <div className="input_users">
                                     <div className="campo_">
@@ -214,7 +236,7 @@ export default function ConsultasAdm() {
                                     <div className="campo_">
                                         <label htmlFor="medico">Medico:</label><br />
                                         <select name="medico" id="medico" name="medico" value={idMedico} onChange={(campo) =>
-                                        setIdMedico(campo.target.value)}>
+                                            setIdMedico(campo.target.value)}>
                                             <option value="0" selected disabled> Selecione o Medico</option>
                                             {
                                                 listaMedicos.map((medico) => {
@@ -230,11 +252,11 @@ export default function ConsultasAdm() {
                                     <div className="campo_">
                                         <label htmlFor="situacao">Situacao:</label><br />
                                         <select name="situacao" id="situacao" name="email" value={idSituacao} onChange={(campo) =>
-                                        setIdSituacao(campo.target.value)}>
-                                                <option value="0" selected disabled>Selecione a situacao</option>
-                                                <option value="1" >Agendada</option>
-                                                <option value="2" >Realizada</option>
-                                                <option value="3" >Cancelada</option>
+                                            setIdSituacao(campo.target.value)}>
+                                            <option value="0" selected disabled>Selecione a situacao</option>
+                                            <option value="1" >Agendada</option>
+                                            <option value="2" >Realizada</option>
+                                            <option value="3" >Cancelada</option>
                                         </select><br />
                                     </div>
                                 </div>
@@ -242,16 +264,16 @@ export default function ConsultasAdm() {
                                     <div className="campo">
                                         <label htmlFor="data">Data da consulta</label><br />
                                         <input name="data" id="data" type="datetime-local" value={dataConsulta} onChange={(campo) =>
-                                        setDataConsulta(campo.target.value)} />
+                                            setDataConsulta(campo.target.value)} />
                                     </div>
                                     <div className="campo">
                                         <label htmlFor="descricao">Descricao</label><br />
                                         <textarea name="descricao" id="descricao" cols="30" rows="10" value={descricaoConsulta} onChange={(campo) =>
-                                        setDescricaoConsulta(campo.target.value)}></textarea>
+                                            setDescricaoConsulta(campo.target.value)}></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <button className="botao">cadastrar</button>
+                            <button type="submit" className="botao">cadastrar</button>
                         </form>
                     </div>
                 </section>

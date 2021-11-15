@@ -8,6 +8,8 @@ import Home from './pages/home/home.jsx';
 import Login from './pages/login/login';
 import NotFound from './pages/notFound/notFound';
 import ConsultasAdm from './pages/consultas/consultasAdm';
+import ConsultasPaciente from './pages/consultas/consultasPaciente';
+import ConsultasMedico from './pages/consultas/consultasMedico';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -26,6 +28,33 @@ const PermissaoAdm = ({ component: Component }) => (
   />
 );
 
+const PermissaoMedico = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() && parseJWT().role === '2' ? (
+        // operador spread
+        <Component {...props} />
+      ) : (
+        <Redirect to="login" />
+      )
+    }
+  />
+);
+
+const PermissaoPaciente = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() && parseJWT().role === '3' ? (
+        // operador spread
+        <Component {...props} />
+      ) : (
+        <Redirect to="login" />
+      )
+    }
+  />
+);
+
+
 const routing = (
   <Router>
     <div>
@@ -33,6 +62,8 @@ const routing = (
         <Route exact path="/" component={Home} /> {/* Home */}
         <Route path="/login" component={Login} />
         <PermissaoAdm path="/consultasAdm" component={ConsultasAdm}/>
+        <PermissaoMedico path="/consultasMedico" component={ConsultasMedico} />
+        <PermissaoPaciente path="/consultasPaciente" component={ConsultasPaciente} />
         <Route path="/notFound" component={NotFound} /> {/* NotFound*/}
         <Redirect to="/notFound" /> {/* Redireciona para notfound caso não encontre nenhuma rota*/}
       </Switch>
