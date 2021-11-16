@@ -3,7 +3,7 @@ import axios from "axios";
 import Cabecalho from "../../components/cabecalho/cabecalho"
 import Rodape from "../../components/rodape/rodape"
 import SituacaoConsulta from "../../components/situacaoConsulta/situacaoConsulta";
-import SetaCima from "../../components/icones/setaCima";
+// import SetaCima from "../../components/icones/setaCima";
 import SetaBaixo from "../../components/icones/setaBaixo";
 
 import "../../assets/css/consultas.css"
