@@ -5,7 +5,7 @@ import Rodape from "../../components/rodape/rodape"
 import SituacaoConsulta from "../../components/situacaoConsulta/situacaoConsulta";
 import SetaCima from "../../components/icones/setaCima";
 import SetaBaixo from "../../components/icones/setaBaixo";
-import Editar from "../../components/icones/editar"
+import Editar from "../../components/icones/editar";
 
 import "../../assets/css/consultas.css"
 
@@ -129,7 +129,15 @@ export default function ConsultasAdm() {
 
     function abrirDescricao(idConsulta){
         //mesma coisa pra desalterar select, porém com a descrição display none ou não
-        document.getElementById("texto_desc" + idConsulta).setAttribute("display", "")
+        var textoDescricao = document.getElementById("texto_desc" + idConsulta);
+
+        if (textoDescricao != null) {
+            if (textoDescricao.style.display === "none") {
+                textoDescricao.style.display = "";      
+            } else{
+                textoDescricao.style.display = "none";
+            }     
+        }
     }
 
     
@@ -190,7 +198,7 @@ export default function ConsultasAdm() {
                                     </div>
                                     <div className="descricao">
                                         <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
-                                            cols="86" rows="10" readOnly="" value={consulta.descricaoConsulta}></textarea>
+                                            cols="76" rows="6" readOnly="" value={consulta.descricaoConsulta}></textarea>
                                         <button onClick={() =>atualizarSituacao(consulta.idConsulta)} id={"btn" + consulta.idConsulta} className="botao" style={{display: "none"}}>Atualizar</button>
                                     </div>
                                 </div>

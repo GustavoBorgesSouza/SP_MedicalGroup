@@ -5,11 +5,14 @@ import Rodape from "../../components/rodape/rodape"
 import SituacaoConsulta from "../../components/situacaoConsulta/situacaoConsulta";
 // import SetaCima from "../../components/icones/setaCima";
 import SetaBaixo from "../../components/icones/setaBaixo";
+import Editar from "../../components/icones/editar";
+
 
 import "../../assets/css/consultas.css"
 
 export default function ConsultasMedico() {
     const [listaConsultas, setListaConsultas] = useState([]);
+    const [descricao, setDescricao] = useState("");
 
 
     function buscarMinhasConsultas() {
@@ -29,6 +32,50 @@ export default function ConsultasMedico() {
 
     useEffect(buscarMinhasConsultas, []);
 
+    function permitirTextArea(idConsulta, descricaoConsulta) {
+        // console.log("Você está editando a situação da consulta " + idConsulta + "e a situação é " + idSituacao)
+        setDescricao(descricaoConsulta);        
+        var textoDescricao = document.getElementById("texto_desc"+ idConsulta)
+        textoDescricao.removeAttribute("readOnly");
+
+        if (textoDescricao.style.display === "none") {
+            textoDescricao.style.display = "";
+        } else{
+            textoDescricao.style.display = "none";
+        }
+
+        var btn = document.getElementById("btn" + idConsulta);
+
+        if (btn.style.display === "none") {
+            btn.style.display = "";      
+        } else{
+            setDescricao("")
+            btn.style.display = "none";
+        }
+        
+    }
+
+    function atualizarDescricao(idConsulta){
+
+        axios.patch("http://localhost:5000/api/Consultas/descricao/" + idConsulta,{
+            descricaoConsulta: descricao
+        },{
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+        .then(resposta =>{
+            if (resposta.status === 204) {
+                console.log("descricao da consulta" + idConsulta + "atualizada");
+                // document.getElementById(idConsulta).setAttribute("readOnly");
+                var btn = document.getElementById("btn" + idConsulta)
+                btn.style.display = "none";
+                buscarMinhasConsultas();
+                setDescricao("")
+            }
+        }).catch(erro => console.log(erro))
+    }
+
 
 
     return (
@@ -44,7 +91,6 @@ export default function ConsultasMedico() {
 
                     {
                         listaConsultas.map((consulta) => {
-                            console.log(consulta.idSituacaoNavigation.situacao1)
                             return (
                                 <div className=" consulta">
                                     <div className="informacoes_principais">
@@ -66,7 +112,6 @@ export default function ConsultasMedico() {
                                             <div className="situacao">
                                                 <div className=" info chave ">
                                                     <SituacaoConsulta situacao={consulta.idSituacaoNavigation.situacao1} />
-                                                    <button type="button" className="vazio"><i className="far fa-edit"></i></button>
                                                 </div>
 
                                             </div>
@@ -81,11 +126,12 @@ export default function ConsultasMedico() {
                                     <hr />
                                     <div className="informacoes_secundarias">
                                         <p className="chave">Descricao da consulta</p>
-                                        <SetaBaixo />
-                                    </div>
+                                        <button onClick={() => permitirTextArea(consulta.idConsulta, consulta.descricaoConsulta)} type="button" className="vazio"><Editar /></button>                                    </div>
                                     <div className="descricao">
-                                        <textarea name="texto_desc" id="texto_desc" className="valor vazio" style={{ resize: "none", display: "none" }}
-                                            cols="86" rows="10" readOnly="">{consulta.descricaoConsulta}</textarea>
+                                        <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
+                                            cols="76" rows="3" readOnly value={descricao} onChange={(campo) => setDescricao(campo.target.value)}>{descricao}</textarea>
+                                    
+                                    <button onClick={() =>atualizarDescricao(consulta.idConsulta)} id={"btn" + consulta.idConsulta} className="botao" style={{display: "none"}}>Atualizar</button>
                                     </div>
                                 </div>
 
@@ -93,63 +139,6 @@ export default function ConsultasMedico() {
 
                         })
                     }
-
-                    <div className=" consulta">
-                        <div className="informacoes_principais">
-                            <div className="info_users">
-                                <div className="info">
-                                    <p className="chave">Paciente:</p>
-                                    <p className="valor">Fernando</p>
-                                </div>
-                                <div className="info">
-                                    <p className="chave">Medico:</p>
-                                    <p className="valor">Roberto Possarle</p>
-                                </div>
-                                <div className="info">
-                                    <p className="chave">Especialidade:</p>
-                                    <p className="valor">Psquiatria</p>
-                                </div>
-                            </div>
-                            <div className="info_consulta">
-                                <div className="situacao">
-                                    <div className=" info chave ">
-                                        <select className="status vazio" name="status" id="status">
-                                            <option defaultValue="0">Agendada</option>
-                                            <option defaultValue="1">Realizada</option>
-                                            <option defaultValue="2">Cancelada</option>
-                                        </select>
-                                        <button type="button" className="vazio"><i className="far fa-edit"></i></button>
-                                    </div>
-
-                                </div>
-                                <div className="info">
-                                    <p className="chave">Data da Consulta:</p>
-                                    <p className="valor">02/07/2020 11:00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr />
-                        <div className="informacoes_secundarias">
-                            <p className="chave">Descricao da consulta</p>
-                            <button className="vazio"><i className="fas fa-chevron-up"></i></button>
-                        </div>
-                        <div className="descricao">
-                            <textarea name="texto_desc" id="texto_desc" className="valor vazio" style={{ resize: "none", cols: 86 }}
-                                rows="10" readOnly="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                                took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                                passages, and more recently with desktop publishing software like Aldus PageMaker including
-                                versions of Lorem Ipsum.
-                            </textarea>
-
-                            <button className="vazio"><i className="far fa-edit"></i></button>
-
-                            <button className="botao">Atualizar</button>
-                        </div>
-                    </div>
-
 
                 </section>
 
