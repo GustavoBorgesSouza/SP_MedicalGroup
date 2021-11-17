@@ -29,6 +29,20 @@ export default function ConsultasPaciente() {
 
     useEffect(buscarMinhasConsultas, []);
 
+    function abrirDescricao(idConsulta){
+        //mesma coisa pra desalterar select, porém com a descrição display none ou não
+        var textoDescricao = document.getElementById("texto_desc"+ idConsulta);
+        if (textoDescricao.value === null || textoDescricao.value === "" || textoDescricao.value === undefined) {
+            textoDescricao.value = "Consulta sem descrição";
+        }
+
+        if (textoDescricao.style.display === "none") {
+            textoDescricao.style.display = "";
+        } else{
+            textoDescricao.style.display = "none";
+        }
+    }
+
 
 
     return (
@@ -44,9 +58,9 @@ export default function ConsultasPaciente() {
 
                     {
                         listaConsultas.map((consulta) => {
-                            console.log(consulta.idSituacaoNavigation.situacao1)
+                            // console.log(consulta.idSituacaoNavigation.situacao1)
                             return (
-                                <div className=" consulta">
+                                <div key={consulta.idConsulta} className=" consulta">
                                     <div className="informacoes_principais">
                                         <div className="info_users">
                                             <div className="info">
@@ -81,11 +95,10 @@ export default function ConsultasPaciente() {
                                     <hr />
                                     <div className="informacoes_secundarias">
                                         <p className="chave">Descricao da consulta</p>
-                                        <SetaBaixo />
-                                    </div>
+                                        <button onClick={() =>abrirDescricao(consulta.idConsulta)} type="button" className="vazio"><SetaBaixo /></button>                                    </div>
                                     <div className="descricao">
-                                        <textarea name="texto_desc" id="texto_desc" className="valor vazio" style={{ resize: "none", display: "none" }}
-                                            cols="86" rows="10" readOnly="">{consulta.descricaoConsulta}</textarea>
+                                        <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
+                                            cols="76" rows="3" readOnly>{consulta.descricaoConsulta}</textarea>
                                     </div>
                                 </div>
 

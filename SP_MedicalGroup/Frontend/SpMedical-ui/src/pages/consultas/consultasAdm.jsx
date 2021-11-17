@@ -3,7 +3,7 @@ import axios from "axios";
 import Cabecalho from "../../components/cabecalho/cabecalho"
 import Rodape from "../../components/rodape/rodape"
 import SituacaoConsulta from "../../components/situacaoConsulta/situacaoConsulta";
-import SetaCima from "../../components/icones/setaCima";
+// import SetaCima from "../../components/icones/setaCima";
 import SetaBaixo from "../../components/icones/setaBaixo";
 import Editar from "../../components/icones/editar";
 
@@ -86,8 +86,11 @@ export default function ConsultasAdm() {
                 if (resposta.status === 201) {
                     console.log("consulta cadastrada");
                     buscarConsultas();
-
-
+                    setIdPaciente(0);
+                    setIdMedico(0);
+                    setIdSituacao(0);
+                    setDataConsulta("");
+                    setDescricaoConsulta("");
                 }
             }).catch(erro => console.log(erro))
     }
@@ -129,14 +132,16 @@ export default function ConsultasAdm() {
 
     function abrirDescricao(idConsulta){
         //mesma coisa pra desalterar select, porém com a descrição display none ou não
-        var textoDescricao = document.getElementById("texto_desc" + idConsulta);
+        var textoDescricao = document.getElementById("texto_desc"+ idConsulta);
+        if (textoDescricao.value === null || textoDescricao.value === "" || textoDescricao.value === undefined) {
+            textoDescricao.value = "Consulta sem descrição";
+            
+        }
 
-        if (textoDescricao != null) {
-            if (textoDescricao.style.display === "none") {
-                textoDescricao.style.display = "";      
-            } else{
-                textoDescricao.style.display = "none";
-            }     
+        if (textoDescricao.style.display === "none") {
+            textoDescricao.style.display = "";
+        } else{
+            textoDescricao.style.display = "none";
         }
     }
 
@@ -194,11 +199,11 @@ export default function ConsultasAdm() {
                                     <hr />
                                     <div className="informacoes_secundarias">
                                         <p className="chave">Descricao da consulta</p>
-                                        <button onClick={abrirDescricao(consulta.idConsulta)} type="button" className="vazio"><SetaBaixo /></button>
+                                        <button onClick={() =>abrirDescricao(consulta.idConsulta)} type="button" className="vazio"><SetaBaixo /></button>
                                     </div>
                                     <div className="descricao">
                                         <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
-                                            cols="76" rows="6" readOnly="" value={consulta.descricaoConsulta}></textarea>
+                                            cols="76" rows="3" readOnly value={consulta.descricaoConsulta}></textarea>
                                         <button onClick={() =>atualizarSituacao(consulta.idConsulta)} id={"btn" + consulta.idConsulta} className="botao" style={{display: "none"}}>Atualizar</button>
                                     </div>
                                 </div>

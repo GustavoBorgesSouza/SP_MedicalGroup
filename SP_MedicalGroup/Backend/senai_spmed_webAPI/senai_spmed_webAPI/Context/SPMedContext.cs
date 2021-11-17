@@ -34,8 +34,8 @@ namespace senai_spmed_webAPI.Context
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                //optionsBuilder.UseSqlServer("Data Source=NOTE0113F3\\SQLEXPRESS; Initial Catalog=SPMedGroup_GBm; user id=sa; pwd=Senai@132;");
-                optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS01; initial catalog=SPMedGroup_GBm; integrated security=true;");
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113F3\\SQLEXPRESS; Initial Catalog=SPMedGroup_GBm; user id=sa; pwd=Senai@132;");
+                //optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS01; initial catalog=SPMedGroup_GBm; integrated security=true;");
             }
         }
 

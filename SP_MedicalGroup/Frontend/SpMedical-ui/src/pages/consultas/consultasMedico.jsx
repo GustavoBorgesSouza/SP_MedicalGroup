@@ -4,7 +4,7 @@ import Cabecalho from "../../components/cabecalho/cabecalho"
 import Rodape from "../../components/rodape/rodape"
 import SituacaoConsulta from "../../components/situacaoConsulta/situacaoConsulta";
 // import SetaCima from "../../components/icones/setaCima";
-import SetaBaixo from "../../components/icones/setaBaixo";
+// import SetaBaixo from "../../components/icones/setaBaixo";
 import Editar from "../../components/icones/editar";
 
 
@@ -37,6 +37,11 @@ export default function ConsultasMedico() {
         setDescricao(descricaoConsulta);        
         var textoDescricao = document.getElementById("texto_desc"+ idConsulta)
         textoDescricao.removeAttribute("readOnly");
+
+        if (textoDescricao.value === null || textoDescricao.value === "") {
+            textoDescricao.value = "Consulta sem descrição";
+            
+        }
 
         if (textoDescricao.style.display === "none") {
             textoDescricao.style.display = "";
@@ -128,8 +133,9 @@ export default function ConsultasMedico() {
                                         <p className="chave">Descricao da consulta</p>
                                         <button onClick={() => permitirTextArea(consulta.idConsulta, consulta.descricaoConsulta)} type="button" className="vazio"><Editar /></button>                                    </div>
                                     <div className="descricao">
-                                        <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
+                                        <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="vazio valor texto_desc" style={{ resize: "none", display: "none" }}
                                             cols="76" rows="3" readOnly value={descricao} onChange={(campo) => setDescricao(campo.target.value)}>{descricao}</textarea>
+                                        
                                     
                                     <button onClick={() =>atualizarDescricao(consulta.idConsulta)} id={"btn" + consulta.idConsulta} className="botao" style={{display: "none"}}>Atualizar</button>
                                     </div>

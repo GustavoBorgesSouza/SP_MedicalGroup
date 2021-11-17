@@ -165,6 +165,17 @@ h2{
     margin-right: 10px;
 }
 
+/* .texto_desc{
+    font-size: 26px;
+    font-weight: normal;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-right: 10px;
+    border:rgb(230, 13, 139);
+    background-color: #a1d7ec36;
+    width: auto;
+} */
+
 .situacao{
     font-size: 26px;
     font-weight: bold;
@@ -189,8 +200,16 @@ h2{
     text-align: right;
 }
 
+.status option{
+    background-color: #B3B3B3;
+    color: #FFFFFF;
+}
+
 hr{
     color: #B3B3B3;
+    width: 100%;
+    margin: 16px 0;
+    display: "none";
 }
 .informacoes_secundarias{
     margin: 14px 34px;

@@ -8,7 +8,7 @@ export default function Analise() {
         
         switch (parseJWT().role) {
             case "1":
-                console.log("sou adm");
+                // console.log("sou adm");
                 return( <Link to="/consultasAdm">Consultas</Link>)
 
 
