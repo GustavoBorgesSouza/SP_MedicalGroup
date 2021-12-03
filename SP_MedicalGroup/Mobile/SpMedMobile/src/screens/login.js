@@ -79,8 +79,9 @@ const styles = StyleSheet.create({
         flex:1,
         width:'100%',
         paddingTop:'20%',
+        // flexDirection:"column",
         alignItems:"center",
-        backgroundColor:"linear-gradient(180deg, rgba(139, 217, 217, 0.3) 0%, rgba(135, 206, 217, 0.234) 6.77%, rgba(130, 192, 217, 0.3) 52.08%, rgba(130, 192, 217, 0.228) 100%)"
+        backgroundColor:"linear-gradient(180deg, rgba(139, 217, 217, 0.3) 0%, rgba(135, 206, 217, 0.234) 6.77%, rgba(130, 192, 217, 0.3) 52.08%, rgba(130, 192, 217, 0.228) 100%);"
     },
     Logo:{
         flex:1,
@@ -98,8 +99,8 @@ const styles = StyleSheet.create({
         width:'80%',
         marginBottom:50,
         paddingLeft:20,
-        placeholderTextColor:"rgba(255, 255, 255, 0.5)",
-        backgroundColor: 'rgba(61, 125, 169, 0.6)',
+        placeholderTextColor:"rgba(255, 255, 255, 0.5);",
+        backgroundColor: 'rgba(61, 125, 169, 0.6);',
         borderRadius:2
     },
     campoLogin:{
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     btnLogin:{
         width:'80%',
         height:50,
-        backgroundColor:'rgba(105, 193, 156, 0.8)',
+        backgroundColor:'rgba(105, 193, 156, 0.8);',
         borderRadius:6,
         alignItems:"center",
         justifyContent:"center"

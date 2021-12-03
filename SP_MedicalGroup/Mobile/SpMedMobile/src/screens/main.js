@@ -27,26 +27,30 @@ import Perfil from './perfil';
 export default function Main() {
     return (
             <Drawer.Navigator
-                initialRouteName="consultas"
+                initialRouteName="Consultas"
                 screenOptions={{
+                    headerShown:false,
                     drawerHideStatusBarOnOpen:true,
-                    drawerStatusBarAnimation:'fade',
+                    drawerStatusBarAnimation:'slide',
+                    drawerActiveBackgroundColor:"rgba(130, 192, 217, 0.6);",
+                    drawerInactiveBackgroundColor:"rgba(105, 193, 156, 1);",
                     drawerStyle:{
-                        backgroundColor: "#1D1136",
-                        width: 240,
+                        backgroundColor: "rgba(105, 193, 156, 1);",
+                        width:"60%",
                     },
                     drawerContentStyle:{
                         alignContent: "center"
                     },
                     drawerLabelStyle:{
                         textAlign: 'center',
-                        color: '#FFF'
+                        color: '#FFF',
+                        fontSize:20
                     }
                     
                 }}
             >
-                <Drawer.Screen name="consultas" component={Consultas} />
-                <Drawer.Screen name="perfil" component={Perfil} />
+                <Drawer.Screen name="Consultas" component={Consultas} />
+                <Drawer.Screen name="Perfil" component={Perfil} />
             </Drawer.Navigator>
     )
 }

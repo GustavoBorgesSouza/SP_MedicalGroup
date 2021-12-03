@@ -15,10 +15,10 @@ class Perfil extends Component {
 render() {
     return (
         <View>
-            <Text>Consultas</Text>
+            <Text>Perfil</Text>
             <View>
                 
-                <Text>Tela de Consultas</Text>
+                <Text>Tela de perfil</Text>
             </View>
         </View>
 
