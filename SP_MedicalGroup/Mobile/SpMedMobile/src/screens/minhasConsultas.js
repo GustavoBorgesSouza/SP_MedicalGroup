@@ -14,6 +14,8 @@ import {
 import api from '../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import SituacaoConsulta from '../services/imgSituacao';
+
 export default class Consultas extends Component {
     constructor(props) {
         super(props);
@@ -32,14 +34,14 @@ export default class Consultas extends Component {
                 },
             });
 
-            console.warn(resposta.status);
+            // console.warn(resposta.status);
 
             if (resposta.status == 200) {
-                console.warn("aqui")
+                // console.warn("aqui")
                 const dadosAPI = resposta.data;
-                 console.warn(resposta.data);
-                 this.setState({ listaConsultas: dadosAPI });
-                console.warn("Chegou os dados ó: " + this.state.listaConsultas)
+                // console.warn(resposta.data);
+                this.setState({ listaConsultas: dadosAPI });
+                // console.warn("Chegou os dados ó: " + this.state.listaConsultas)
             }
 
         } catch (error) {
@@ -84,9 +86,35 @@ export default class Consultas extends Component {
         )
     };
 
+
+
+
     renderItem = ({ item }) => (
         <View style={styles.cardConsulta}>
-            <Text>{item.idMedicoNavigation.nomeMedico}</Text>
+            <View style={styles.mainInfoCard}>
+                <View style={styles.dataInfo}>
+                    <Text style={styles.chave}>Data da consulta: </Text>
+                    <Text style={styles.valor}>{Intl.DateTimeFormat("pt-BR", {
+                                                    year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric"
+                                                }).format(new Date(item.dataConsulta))}</Text>
+                </View>
+                <View style={styles.pacInfo}>
+                    <Text style={styles.chave}>Paciente: </Text>
+                    <Text style={styles.valor}>{item.idPacienteNavigation.nomePaciente}</Text>
+                </View>
+                <View style={styles.medInfo}>
+                    <Text style={styles.chave}>Medico: </Text>
+                    <Text style={styles.valor}>{item.idMedicoNavigation.nomeMedico + " " + item.idMedicoNavigation.sobrenomeMedico}</Text>
+                </View>
+                <View style={styles.espInfo}>
+                    <Text style={styles.chave}>Especialidade: </Text>
+                    <Text style={styles.valor}>{(item.idMedicoNavigation.idEspecialidadeNavigation.tituloEspecialidade)}</Text>
+                </View>
+            </View>
+            <View style={styles.addInfoCard}>
+                <SituacaoConsulta situacao={item.idSituacaoNavigation.situacao1} />         
+                <Text style={styles.chave}>{item.idSituacaoNavigation.situacao1}</Text>
+            </View>
         </View>
     )
 };
@@ -116,18 +144,73 @@ const styles = StyleSheet.create({
         width: "50%",
         textAlign: "center"
     },
-    main:{
-        width:"'100%"
+    main: {
+        width: "100%",
+        marginTop:2
     },
-    mainBodyContent:{
-        width:"100%",
-        paddingTop:10,
-        backgroundColor:"green"
+    mainBodyContent: {
+        width: "100%",
+        paddingTop: 10,
+        paddingBottom:10,
+        marginBottom:10,
+        // backgroundColor: "green",
+        alignItems: "center"
     },
     cardConsulta: {
         width: "80%",
-        backgroundColor: "blue",
-        height: 200
-    }
+        marginTop: 10,
+        marginBottom:10,
+        paddingTop:20,
+        backgroundColor: "rgba(130, 192, 217, 0.8);",
+        height: 200,
+        flexDirection:"row",
+        borderRadius:25,
+        paddingLeft:20,
+        paddingBottom:20,
+
+
+    },
+    mainInfoCard:{
+        flex:2
+    },
+    addInfoCard:{
+        flex:1,
+        alignItems:"center",
+        height:"90%",
+        justifyContent:"center"
+    },
+    chave:{
+        color:"#FFF",
+        fontSize:18,
+        fontWeight:"bold"
+    },
+    valor:{
+        color:"#FFF",
+        fontSize:16,
+    },
+    dataInfo:{
+        marginBottom:10,
+        justifyContent:"center",
+        // alignItems:"center"
+    },
+    pacInfo:{
+        flexDirection:"row",
+        marginBottom:10,
+        // justifyContent:"center",
+        alignItems:"center"
+    },
+    medInfo:{
+        flexDirection:"row",
+        marginBottom:10,
+        // justifyContent:"center",
+        alignItems:"center"
+    },
+    espInfo:{
+        flexDirection:"row",
+        marginBottom:10,
+        // justifyContent:"center",
+        alignItems:"center"
+    },
+
 
 });

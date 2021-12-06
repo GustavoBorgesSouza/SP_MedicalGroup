@@ -21,7 +21,7 @@ class App extends Component {
         />
         <AuthStack.Navigator
           screenOptions={{
-            headerShown: true,
+            headerShown: false,
           }}>
           <AuthStack.Screen name="Login" component={Login} />
           <AuthStack.Screen name="Main" component={Main} />

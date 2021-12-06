@@ -38,9 +38,14 @@ namespace senai_spmed_webAPI.Repositories
 
         public void Cadastrar(Paciente novopaciente)
         {
-            ctx.Add(novopaciente);
+            if (DateTime.Now > novopaciente.DataNascimento)
+            {
+                ctx.Add(novopaciente);
 
-            ctx.SaveChanges();
+                ctx.SaveChanges();
+            }
+
+            
         }
 
         public void Deletar(int idPaciente)

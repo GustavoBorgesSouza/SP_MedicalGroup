@@ -43,6 +43,8 @@ namespace senai_spmed_webAPI.Controllers
                     return BadRequest("Usuario ou senha inválidos");
                 }
 
+                
+
                 var minhasClaims = new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Email, UsuarioBuscado.Email),
@@ -50,6 +52,7 @@ namespace senai_spmed_webAPI.Controllers
                     new Claim(ClaimTypes.Role, UsuarioBuscado.IdTipoUsuario.ToString()),
 
                     new Claim("role", UsuarioBuscado.IdTipoUsuario.ToString())
+
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmg-chave-autenticacao"));

@@ -33,9 +33,9 @@ export default class Login extends Component {
 
         if (resposta.status == 200) {
             this.props.navigation.navigate('Main');
-            console.warn('logou');
+            // console.warn('logou');
         }
-        console.warn(token);
+        // console.warn(token);
 
 
     };
