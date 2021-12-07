@@ -68,9 +68,6 @@ export default class Consultas extends Component {
 
                 <View style={styles.main}>
 
-                    <View>
-
-                    </View>
                     <FlatList
                         contentContainerStyle={styles.mainBodyContent}
                         data={this.state.listaConsultas}
@@ -125,6 +122,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         paddingTop: '10%',
+        paddingBottom:'20%',
         // flexDirection:"column",
         alignItems: "center",
         backgroundColor: "linear-gradient(180deg, rgba(139, 217, 217, 0.3) 0%, rgba(135, 206, 217, 0.234) 6.77%, rgba(130, 192, 217, 0.3) 52.08%, rgba(130, 192, 217, 0.228) 100%);"

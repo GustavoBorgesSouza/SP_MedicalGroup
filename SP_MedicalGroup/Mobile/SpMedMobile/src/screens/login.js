@@ -33,6 +33,10 @@ export default class Login extends Component {
 
         if (resposta.status == 200) {
             this.props.navigation.navigate('Main');
+            this.setState({
+                email: "",
+            senha:""
+            })
             // console.warn('logou');
         }
         // console.warn(token);
@@ -61,6 +65,7 @@ export default class Login extends Component {
                     style={styles.input}
                     placeholder="Senha:"
                     keyboardType="default"
+                    secureTextEntry={true} 
                     onChangeText={senha => this.setState({senha}) }
                     />
                 </View>
@@ -99,7 +104,7 @@ const styles = StyleSheet.create({
         width:'80%',
         marginBottom:50,
         paddingLeft:20,
-        placeholderTextColor:"rgba(255, 255, 255, 0.5);",
+        // placeholderTextColor:"rgba(255, 255, 255, 0.5);",
         backgroundColor: 'rgba(61, 125, 169, 0.6);',
         borderRadius:2
     },

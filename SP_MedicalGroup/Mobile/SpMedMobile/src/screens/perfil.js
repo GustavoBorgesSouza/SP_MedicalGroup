@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
     },
     valor:{
-        color:"#FFF",
+        color:"#82C0D9",
         fontSize:18,
     },
     logout: {
