@@ -60,7 +60,7 @@ export default class Consultas extends Component {
             <View style={styles.pagConsultas}>
                 <View style={styles.titulo}>
                     <Image
-                        source={require('../assets/Maleta-verde.png')}
+                        source={require('../assets/maleta-verdeEscuro.png')}
                         style={styles.imgTitulo}
                     />
                     <Text style={styles.textTitulo}>Minhas Consultas</Text>
@@ -125,7 +125,8 @@ const styles = StyleSheet.create({
         paddingBottom:'20%',
         // flexDirection:"column",
         alignItems: "center",
-        backgroundColor: "linear-gradient(180deg, rgba(139, 217, 217, 0.3) 0%, rgba(135, 206, 217, 0.234) 6.77%, rgba(130, 192, 217, 0.3) 52.08%, rgba(130, 192, 217, 0.228) 100%);"
+        // backgroundColor:"rgba(61, 125, 169, 0.6);",
+        backgroundColor:"#FFF"
     },
     titulo: {
         flexDirection: "row",
@@ -133,14 +134,15 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         width: "60%",
         borderBottomWidth: 1,
-        borderBottomColor: "rgba(137, 217, 178, 0.8)",
+        borderBottomColor: "#89D9B2",
         paddingBottom: 4
     },
     textTitulo: {
-        color: "rgba(137, 217, 178, 0.8);",
+        color: "#89D9B2",
         fontSize: 22,
         width: "50%",
-        textAlign: "center"
+        textAlign: "center",
+        textTransform:"uppercase"
     },
     main: {
         width: "100%",
@@ -159,7 +161,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom:10,
         paddingTop:20,
-        backgroundColor: "rgba(130, 192, 217, 0.8);",
+        // backgroundColor: "rgba(137, 217, 178, 1)",
+        backgroundColor: "#82C0D9",
         height: 200,
         flexDirection:"row",
         borderRadius:25,

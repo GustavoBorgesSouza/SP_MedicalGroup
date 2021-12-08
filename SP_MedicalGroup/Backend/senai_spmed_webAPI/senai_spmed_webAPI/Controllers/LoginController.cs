@@ -20,10 +20,15 @@ namespace senai_spmed_webAPI.Controllers
     public class LoginController : ControllerBase
     {
         private IUsuarioRepository _usuarioRepository { get; set; }
+        //private IMedicoRepository _medicoRepository { get; set; }
+        //private IPacienteRepository _pacienteRepository { get; set; }
+
 
         public LoginController()
         {
             _usuarioRepository = new UsuarioRepository();
+            //_medicoRepository = new MedicoRepository();
+            //_pacienteRepository = new PacienteRepository();
         }
 
         /// <summary>
@@ -36,6 +41,7 @@ namespace senai_spmed_webAPI.Controllers
         {
             try
             {
+
                 Usuario UsuarioBuscado = _usuarioRepository.Login(login.Email, login.Senha);
 
                 if (UsuarioBuscado == null)
@@ -43,7 +49,8 @@ namespace senai_spmed_webAPI.Controllers
                     return BadRequest("Usuario ou senha inválidos");
                 }
 
-                
+
+
 
                 var minhasClaims = new[]
                 {
@@ -51,8 +58,7 @@ namespace senai_spmed_webAPI.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti, UsuarioBuscado.IdUsuario.ToString()),
                     new Claim(ClaimTypes.Role, UsuarioBuscado.IdTipoUsuario.ToString()),
 
-                    new Claim("role", UsuarioBuscado.IdTipoUsuario.ToString())
-
+                    new Claim("role", UsuarioBuscado.IdTipoUsuario.ToString()),
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmg-chave-autenticacao"));

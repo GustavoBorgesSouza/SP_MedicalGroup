@@ -32,10 +32,9 @@ export default function Main() {
                     headerShown:false,
                     drawerHideStatusBarOnOpen:true,
                     drawerStatusBarAnimation:'slide',
-                    drawerActiveBackgroundColor:"rgba(130, 192, 217, 0.6);",
-                    drawerInactiveBackgroundColor:"rgba(105, 193, 156, 1);",
+                    drawerActiveBackgroundColor:"rgba(130, 192, 217, 0.8);",
                     drawerStyle:{
-                        backgroundColor: "rgba(105, 193, 156, 1);",
+                        backgroundColor: "rgba(105, 193, 156, 0.88);",
                         width:"60%",
                     },
                     drawerContentStyle:{

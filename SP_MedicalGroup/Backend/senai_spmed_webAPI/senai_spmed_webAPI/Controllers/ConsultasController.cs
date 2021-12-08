@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using senai_spmed_webAPI.Domains;
 using senai_spmed_webAPI.Interfaces;
 using senai_spmed_webAPI.Repositories;
+using senai_spmed_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -98,11 +99,19 @@ namespace senai_spmed_webAPI.Controllers
         /// <returns>status code 201 created</returns>
         [Authorize(Roles ="1")]
         [HttpPost]
-        public IActionResult Cadastrar(Consultum novaConsulta)
+        public IActionResult Cadastrar(CadastroViewModel novaConsulta)
         {
             try
             {
-                _consultaRepository.Cadastrar(novaConsulta);
+                Consultum consultaNova = new Consultum();
+
+                consultaNova.IdPaciente = novaConsulta.IdPaciente;
+                consultaNova.IdMedico = novaConsulta.IdMedico;
+                consultaNova.IdSituacao = novaConsulta.IdSituacao;
+                consultaNova.DataConsulta = novaConsulta.DataConsulta;
+                consultaNova.DescricaoConsulta = consultaNova.DescricaoConsulta;
+
+                _consultaRepository.Cadastrar(consultaNova);
 
                 return StatusCode(201);
             }

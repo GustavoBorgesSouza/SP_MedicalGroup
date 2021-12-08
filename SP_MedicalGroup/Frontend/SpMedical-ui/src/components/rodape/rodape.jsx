@@ -28,6 +28,7 @@ export default function Rodape() {
                     <li><Whatsapp/>Whatsapp</li>
                     <li><Facebook/> Facebook</li>
                     <li><Instagram/>Instagram</li>
+                    
                 </ul>
             </div>
         </div>

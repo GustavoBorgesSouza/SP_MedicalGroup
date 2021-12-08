@@ -61,7 +61,7 @@ export default function ConsultasMedico() {
     }
 
     function atualizarDescricao(idConsulta){
-
+        console.log(descricao + idConsulta)
         axios.patch("http://localhost:5000/api/Consultas/descricao/" + idConsulta,{
             descricaoConsulta: descricao
         },{

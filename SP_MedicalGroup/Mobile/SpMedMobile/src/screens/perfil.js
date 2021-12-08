@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         paddingTop: '10%',
         // flexDirection:"column",
         alignItems: "center",
-        backgroundColor: "linear-gradient(180deg, rgba(139, 217, 217, 0.3) 0%, rgba(135, 206, 217, 0.234) 6.77%, rgba(130, 192, 217, 0.3) 52.08%, rgba(130, 192, 217, 0.228) 100%);"
+        backgroundColor: "#FFF"
     },
     titulo: {
         flexDirection: "row",
@@ -107,7 +107,8 @@ const styles = StyleSheet.create({
         color: "rgba(137, 217, 178, 0.8);",
         fontSize: 22,
         width: "50%",
-        textAlign: "center"
+        textAlign: "center",
+        textTransform:"uppercase"
     },
     main: {
         flex: 4,
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
         height:"40%"
     },
     chave:{
-        color:"#FFF",
+        color:"#82C0D9",
         fontSize:26,
         fontWeight:"bold",
     },
@@ -145,7 +146,8 @@ const styles = StyleSheet.create({
         lineHeight:38,
         letterSpacing:2,
         color:"rgba(137, 217, 178, 0.8)",
-        marginTop:4
+        marginTop:4,
+        textTransform:"uppercase"
     }
 });
 

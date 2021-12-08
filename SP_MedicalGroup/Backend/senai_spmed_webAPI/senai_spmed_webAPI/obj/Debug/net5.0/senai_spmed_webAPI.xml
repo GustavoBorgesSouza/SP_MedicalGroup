@@ -58,7 +58,7 @@
             <param name="id">Id da consulta a ser buscada</param>
             <returns>Uma consulta</returns>
         </member>
-        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Cadastrar(senai_spmed_webAPI.Domains.Consultum)">
+        <member name="M:senai_spmed_webAPI.Controllers.ConsultasController.Cadastrar(senai_spmed_webAPI.ViewModels.CadastroViewModel)">
             <summary>
             Cadastra uma nova consulta
             </summary>
