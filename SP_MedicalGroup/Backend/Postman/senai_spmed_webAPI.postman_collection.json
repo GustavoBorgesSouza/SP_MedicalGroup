@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"administrador@gmail.com\",\r\n    \"Senha\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"administrador@gmail.com\",\r\n    \"Senha\": \"123456\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,12 +23,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/login",
+							"raw": "http://192.168.3.158/api/login",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"192",
+								"168",
+								"3",
+								"158"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"login"
@@ -45,7 +47,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwianRpIjoiMTEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMyOTE2MTg2LCJpc3MiOiJzcG1lZC53ZWJBUEkiLCJhdWQiOiJzcG1lZC53ZWJBUEkifQ.x1RQh-hx0Dloe29CARPVNKo-a3qVmHIhztgYc9L6H2I",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwianRpIjoiMTEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2Mzg5Njc1MzEsImlzcyI6InNwbWVkLndlYkFQSSIsImF1ZCI6InNwbWVkLndlYkFQSSJ9.zF9TGfYLGygVxstw_fXQU_tPyv3u0ad1ve6BCILHU0A",
 									"type": "string"
 								}
 							]
@@ -53,12 +55,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/usuarios",
+							"raw": "http://192.168.3.158/api/usuarios",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"192",
+								"168",
+								"3",
+								"158"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"usuarios"
@@ -75,7 +79,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwianRpIjoiMTEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMyOTI1NTMzLCJpc3MiOiJzcG1lZC53ZWJBUEkiLCJhdWQiOiJzcG1lZC53ZWJBUEkifQ.CgI5wYVis_c0_3ofoeOOZU5RBZ8gTz7-sz65xTIQ9vI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwianRpIjoiMTEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2Mzg5Njc1MzEsImlzcyI6InNwbWVkLndlYkFQSSIsImF1ZCI6InNwbWVkLndlYkFQSSJ9.zF9TGfYLGygVxstw_fXQU_tPyv3u0ad1ve6BCILHU0A",
 									"type": "string"
 								}
 							]
@@ -83,16 +87,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/usuarios/14",
+							"raw": "http://192.168.3.158/api/usuarios/2",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"192",
+								"168",
+								"3",
+								"158"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"usuarios",
-								"14"
+								"2"
 							]
 						}
 					},
@@ -221,7 +227,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2FyZG8ubGVtb3NAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzI3NTIyMDMsImlzcyI6InNwbWVkLndlYkFQSSIsImF1ZCI6InNwbWVkLndlYkFQSSJ9.zrrgyMwJZQ7n9Gf1vTi-Oi8-MHeJdSfb4t0xJK1lANU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYmVydG8ucG9zc2FybGVAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJyb2xlIjoiMiIsImV4cCI6MTYzODUzNjA4OSwiaXNzIjoic3BtZWQud2ViQVBJIiwiYXVkIjoic3BtZWQud2ViQVBJIn0.XAZb7Pvq55dJtR5a80X_axJkCZ4eCfHo5XaTTFKRCro",
 									"type": "string"
 								}
 							]
@@ -229,12 +235,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/consultas/minhas",
+							"raw": "http://192.168.3.158/api/consultas/minhas",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"192",
+								"168",
+								"3",
+								"158"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"consultas",
@@ -1110,6 +1118,60 @@
 								"api",
 								"medicos",
 								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localizacoes",
+			"item": [
+				{
+					"name": "Localizacoes.listarTodas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Localizacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Localizacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Localizacoes.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"endereco\": \"Av. Paulista, 1578 - Bela Vista, São Paulo - SP, 01310-200\",\r\n  \"latitude\": \"-23.561428560376225\",\r\n  \"longitude\": \"-46.65600391706407\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Localizacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Localizacoes"
 							]
 						}
 					},

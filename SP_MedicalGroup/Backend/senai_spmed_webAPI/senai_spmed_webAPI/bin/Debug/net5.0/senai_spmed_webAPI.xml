@@ -96,6 +96,21 @@
             <param name="idConsulta">Id da consulta a ser buscada</param>
             <returns>Status code 204 no content</returns>
         </member>
+        <member name="M:senai_spmed_webAPI.Controllers.LocalizacoesController.ListarTodas">
+            <summary>
+            Lista todas as localizações
+            </summary>
+            <returns>Uma lista com as localizações</returns>
+            
+        </member>
+        <member name="M:senai_spmed_webAPI.Controllers.LocalizacoesController.Cadastrar(senai_spmed_webAPI.Domains.Localizacao)">
+            <summary>
+            Cadastra uma nova  localização
+            </summary>
+            <param name="novaLocalizacao">Obj nova localização</param>
+            <returns>status code 201 created</returns>
+            
+        </member>
         <member name="M:senai_spmed_webAPI.Controllers.LoginController.Login(senai_spmed_webAPI.ViewModels.LoginViewModel)">
             <summary>
             Método de login
