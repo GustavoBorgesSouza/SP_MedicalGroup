@@ -10,8 +10,8 @@ import NotFound from './pages/notFound/notFound';
 import ConsultasAdm from './pages/consultas/consultasAdm';
 import ConsultasPaciente from './pages/consultas/consultasPaciente';
 import ConsultasMedico from './pages/consultas/consultasMedico';
-
 import reportWebVitals from './reportWebVitals';
+import MapContainer from './pages/mapas/mapas';
 
 import { parseJWT, usuarioAutenticado } from './services/auth';
 
@@ -62,6 +62,7 @@ const routing = (
         <Route exact path="/" component={Home} /> {/* Home */}
         <Route path="/login" component={Login} />
         <PermissaoAdm path="/consultasAdm" component={ConsultasAdm}/>
+        <PermissaoAdm path="/analise" component={MapContainer}/>
         <PermissaoMedico path="/consultasMedico" component={ConsultasMedico} />
         <PermissaoPaciente path="/consultasPaciente" component={ConsultasPaciente} />
         <Route path="/notFound" component={NotFound} /> {/* NotFound*/}
