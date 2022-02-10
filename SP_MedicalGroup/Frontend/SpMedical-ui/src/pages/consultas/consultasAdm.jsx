@@ -22,38 +22,38 @@ export default function ConsultasAdm() {
     const [descricaoConsulta, setDescricaoConsulta] = useState("");
 
 
-    function buscarMedicos() {
-        axios("http://localhost:5000/api/Medicos", {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    setListaMedicos(resposta.data);
-                }
-            }).catch(erro => console.log(erro));
-    }
+    // function buscarMedicos() {
+    //     axios("http://localhost:5000/api/Medicos", {
+    //         headers: {
+    //             'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+    //         }
+    //     })
+    //         .then(resposta => {
+    //             if (resposta.status === 200) {
+    //                 setListaMedicos(resposta.data);
+    //             }
+    //         }).catch(erro => console.log(erro));
+    // }
 
-    useEffect(buscarMedicos, [])
+    // useEffect(buscarMedicos, [])
 
-    function buscarPacientes() {
-        axios("http://localhost:5000/api/Pacientes", {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    setListaPacientes(resposta.data);
-                }
-            }).catch(erro => console.log(erro));
-    }
+    // function buscarPacientes() {
+    //     axios("http://localhost:5000/api/Pacientes", {
+    //         headers: {
+    //             'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+    //         }
+    //     })
+    //         .then(resposta => {
+    //             if (resposta.status === 200) {
+    //                 setListaPacientes(resposta.data);
+    //             }
+    //         }).catch(erro => console.log(erro));
+    // }
 
-    useEffect(buscarPacientes, []);
+    // useEffect(buscarPacientes, []);
 
     function buscarConsultas() {
-        axios("http://localhost:5000/api/Consultas", {
+        axios("https://620504a9161670001741b31c.mockapi.io/Consulta", {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -164,27 +164,27 @@ export default function ConsultasAdm() {
                         listaConsultas.map((consulta) => {
                             // console.log(consulta.idSituacaoNavigation.situacao1)
                             return (
-                                <div key={consulta.idConsulta} className=" consulta">
+                                <div key={consulta.IdConsulta} className=" consulta">
                                     <div className="informacoes_principais">
                                         <div className="info_users">
                                             <div className="info">
                                                 <p className="chave">Paciente:</p>
-                                                <p className="valor">{consulta.idPacienteNavigation.nomePaciente}</p>
+                                                <p className="valor">{consulta.IdPaciente[0].NomePaciente}</p>
                                             </div>
                                             <div className="info">
                                                 <p className="chave">Medico:</p>
-                                                <p className="valor">{consulta.idMedicoNavigation.nomeMedico} {consulta.idMedicoNavigation.sobrenomeMedico}</p>
+                                                <p className="valor">{consulta.IdMedico[0].NomeMedico} {consulta.IdMedico[0].SobrenomeMedico}</p>
                                             </div>
                                             <div className="info">
                                                 <p className="chave">Especialidade:</p>
-                                                <p className="valor">{consulta.idMedicoNavigation.idEspecialidadeNavigation.tituloEspecialidade}</p>
+                                                {/* <p className="valor">{consulta.idMedicoNavigation.idEspecialidadeNavigation.tituloEspecialidade}</p> */}
                                             </div>
                                         </div>
                                         <div className="info_consulta">
                                             <div className="situacao">
                                                 <div className=" info chave ">
-                                                    <SituacaoConsulta mudar={(campo) => setIdSituacao(campo.target.value)} idConsulta={consulta.idConsulta} situacao={consulta.idSituacaoNavigation.situacao1} />
-                                                    <button onClick={() => permitirSelect(consulta.idConsulta)} type="button" className="vazio"><Editar /></button>
+                                                    <SituacaoConsulta mudar={(campo) => setIdSituacao(campo.target.value)} idConsulta={consulta.idConsulta} situacao={"Agendada"} />
+                                                    <button onClick={() => permitirSelect(consulta.IdConsulta)} type="button" className="vazio"><Editar /></button>
                                                 </div>
 
                                             </div>
@@ -192,19 +192,19 @@ export default function ConsultasAdm() {
                                                 <p className="chave">Data da Consulta:</p>
                                                 <p className="valor">{Intl.DateTimeFormat("pt-BR", {
                                                     year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric"
-                                                }).format(new Date(consulta.dataConsulta))}</p>
+                                                }).format(new Date(consulta.DataConsulta))}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <hr />
                                     <div className="informacoes_secundarias">
                                         <p className="chave">Descricao da consulta</p>
-                                        <button onClick={() =>abrirDescricao(consulta.idConsulta)} type="button" className="vazio"><SetaBaixo /></button>
+                                        <button onClick={() =>abrirDescricao(consulta.IdConsulta)} type="button" className="vazio"><SetaBaixo /></button>
                                     </div>
                                     <div className="descricao">
-                                        <textarea name="texto_desc" id={"texto_desc" + consulta.idConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
-                                            cols="76" rows="3" readOnly value={consulta.descricaoConsulta}></textarea>
-                                        <button onClick={() =>atualizarSituacao(consulta.idConsulta)} id={"btn" + consulta.idConsulta} className="botao" style={{display: "none"}}>Atualizar</button>
+                                        <textarea name="texto_desc" id={"texto_desc" + consulta.IdConsulta} className="valor vazio" style={{ resize: "none", display: "none" }}
+                                            cols="76" rows="3" readOnly value={consulta.DescricaoConsulta}></textarea>
+                                        <button onClick={() =>atualizarSituacao(consulta.IdConsulta)} id={"btn" + consulta.IdConsulta} className="botao" style={{display: "none"}}>Atualizar</button>
                                     </div>
                                 </div>
 
@@ -215,7 +215,7 @@ export default function ConsultasAdm() {
 
                 </section>
 
-                <section id="cadastro" className="container cadastro">
+                {/* <section id="cadastro" className="container cadastro">
                     <h2>Cadastro</h2>
                     <div className="container_cadastro">
                         <form onSubmit={cadastrarConsultas} className="container_cadastro">
@@ -279,7 +279,7 @@ export default function ConsultasAdm() {
                             <button type="submit" className="botao">cadastrar</button>
                         </form>
                     </div>
-                </section>
+                </section> */}
             </main>
 
             <Rodape />
